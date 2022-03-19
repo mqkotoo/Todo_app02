@@ -10,6 +10,7 @@ class TasksScreen extends StatelessWidget {
 
    @override
   Widget build(BuildContext context) {
+     final task = Provider.of<TaskData>(context);
     return Scaffold(
       backgroundColor: Colors.lightBlueAccent,
       floatingActionButton: FloatingActionButton(
@@ -57,7 +58,7 @@ class TasksScreen extends StatelessWidget {
                       fontWeight: FontWeight.w700),
                 ),
                 Text(
-                  '${Provider.of<TaskData>(context).taskCount} Tasks',
+                  '${task.taskCount} Tasks',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 18.0,
@@ -84,6 +85,21 @@ class TasksScreen extends StatelessWidget {
     );
   }
 }
+
+
+// Expanded(
+// child: Container(
+// padding: EdgeInsets.symmetric(horizontal: 30.0,vertical: 30),
+// decoration: BoxDecoration(
+// color: Colors.white,
+// borderRadius: BorderRadius.only(
+// topLeft: Radius.circular(20.0),
+// topRight: Radius.circular(20.0),
+// ),
+// ),
+// child: TasksList(),
+// ),
+// ),
 
 
 
